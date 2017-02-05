@@ -83,7 +83,7 @@ export default class Slider extends Component {
         >
           <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
             <h2 style={{fontSize: '3em'}}>{this.state.selectedBike.name}</h2>
-            <img style={{maxHeight: imgHeight}} className='modalImg' src={images[this.state.selectedBike.id - 1]} />
+            <img style={{maxHeight: imgHeight, overflow: 'none'}} className='modalImg' src={images[this.state.selectedBike.id - 1]} />
           </div>
           <div style={{fontSize: descriptionSize, margin: '2vh 0'}}>{`Description: ${this.state.selectedBike.description}`}</div>
           <div style={{fontSize: '2em'}}>{`Price: $${this.state.selectedBike.price}`}</div>
@@ -97,7 +97,9 @@ export default class Slider extends Component {
               cursor: 'pointer'
             }}
             onClick={this.closeModal}
-          >Close</div>
+          >
+          Close
+          </div>
         </Modal>
       </div>
     )
